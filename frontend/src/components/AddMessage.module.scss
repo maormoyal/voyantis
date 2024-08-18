@@ -1,0 +1,34 @@
+// src/components/AddMessage.module.scss
+.addMessageContainer {
+  margin-top: 20px;
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  .messageInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .addButton {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+
+  .feedback {
+    margin-top: 10px;
+    color: red;
+  }
+}

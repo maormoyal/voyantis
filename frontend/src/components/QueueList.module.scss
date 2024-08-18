@@ -1,0 +1,28 @@
+// src/components/QueueList.module.scss
+.queueList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.queueItem {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  h3 {
+    margin: 0 0 10px;
+  }
+
+  p {
+    margin: 0;
+    color: #666;
+  }
+}
