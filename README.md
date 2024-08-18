@@ -29,7 +29,6 @@ queue-management/
     │   │   ├── AddMessage.jsx
     │   │   ├── QueueDetails.jsx
     │   │   └── QueueList.jsx
-    │   ├── styles/
     │   │   ├── GlobalStyles.module.scss
     │   │   ├── AddMessage.module.scss
     │   │   ├── QueueDetails.module.scss
@@ -136,9 +135,6 @@ Before you begin, ensure you have the following installed:
   - If you see an "Unexpected response format" error, check the backend's API response format by querying the endpoints directly using Postman or curl.
   - Ensure that the backend returns an array of objects as expected by the frontend.
 
-- **CORS Issues:**
-  - If you encounter CORS issues, ensure that the backend server is configured to allow requests from the frontend origin.
-
 ### Logs
 
 - **Backend Logs:**
@@ -152,6 +148,6 @@ Before you begin, ensure you have the following installed:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
+## Contact Info
 
-- Thanks to the developers and maintainers of the libraries and tools used in this project.
+maorkab@gmail.com
