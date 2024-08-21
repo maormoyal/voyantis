@@ -1,10 +1,9 @@
 /* eslint-disable react/prop-types */
-// src/components/QueueList.jsx
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './QueueList.module.scss';
 
-const QueueList = ({ onSelectQueue }) => {
+const QueueList = ({ onSelectQueue, refresh }) => {
   const [queues, setQueues] = useState([]);
   const [error, setError] = useState(null);
 
@@ -22,10 +21,10 @@ const QueueList = ({ onSelectQueue }) => {
         }
       })
       .catch((error) => {
-        console.error('Error fetching queue stats', error);
-        setError('Failed to fetch queue stats: ' + error.message);
+        console.error('Error fetching queues', error);
+        setError('Failed to fetch queues: ' + error.message);
       });
-  }, []);
+  }, [refresh]);
 
   if (error) {
     return <div className={styles.errorMessage}>{error}</div>;
@@ -40,7 +39,7 @@ const QueueList = ({ onSelectQueue }) => {
           <div
             key={queue.queueName}
             className={styles.queueItem}
-            onClick={() => onSelectQueue(queue.queueName)} // Ensure this is working
+            onClick={() => onSelectQueue(queue.queueName)}
           >
             <h3>{queue.queueName}</h3>
             <p>{queue.messageCount} messages</p>

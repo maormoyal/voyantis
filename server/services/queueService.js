@@ -1,6 +1,10 @@
-// services/queueService.js
-
 const queues = {};
+
+function createQueue(queueName) {
+  if (!queues[queueName]) {
+    queues[queueName] = [];
+  }
+}
 
 function addMessageToQueue(queueName, message) {
   if (!queues[queueName]) {
@@ -36,6 +40,7 @@ function getQueueStats() {
 }
 
 module.exports = {
+  createQueue,
   addMessageToQueue,
   getMessageFromQueue,
   getQueueStats,

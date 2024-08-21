@@ -2,11 +2,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+// body {
+//   margin: 0;
+//   font-family: 'Roboto', sans-serif;
+//   background-color: #f4f4f4;
+//   color: #333;
+// }
+
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f5f5f5;
   color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #1c1e21;
 }
 
 .appContainer {
@@ -18,4 +34,91 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 20px;
+}
+
+button {
+  z-index: 991;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  background-color: #003246;
+  border: 1px solid #f050;
+  border-radius: 5px;
+  padding: 0.75rem 1.53125rem;
+  font-family: DM Sans, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+  transition: border-color 0.3s, color 0.3s, background-color 0.3s;
+  position: relative;
+  &:hover {
+    color: #003246;
+    background-color: #0000;
+    border: 1px solid #003246;
+  }
+}
+
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='tel'],
+input[type='number'],
+textarea,
+select {
+  width: 100%; // Full width of the container
+  padding: 10px; // Padding inside the input
+  margin-bottom: 20px; // Space below each input field
+  border: 1px solid #ccc; // Light grey border
+  border-radius: 5px; // Slightly rounded corners
+  font-size: 16px; // Font size
+  color: #333; // Dark text color
+  background-color: #f9f9f9; // Light background for input
+  box-sizing: border-box; // Ensure padding is included in the width
+
+  &:focus {
+    border-color: #ff3366; // Pinkish color for focus state (matches the button color in the reference)
+    outline: none; // Remove default outline
+    background-color: #fff; // White background on focus
+  }
+}
+
+// Specific styling for labels and required fields
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block; // Ensure label is above the input
+  color: #333;
+}
+
+label.required::after {
+  content: ' *'; // Add a red asterisk for required fields
+  color: #ff3366; // Pinkish color matching the reference
+}
+
+// Styling for error or feedback messages
+.feedback,
+.error {
+  color: #ff4d4f; // Red color for error or feedback messages
+  margin-top: -15px; // Pull up the error message closer to the input
+  margin-bottom: 15px; // Space after the message
+}
+
+// Styling for the resume upload button (if applicable)
+.uploadButton {
+  color: #ff3366; // Matching the reference's pinkish color
+  background: none; // No background
+  border: none; // No border
+  text-decoration: underline; // Underlined text
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none; // Remove underline on hover
+  }
+}
+
+// Form layout
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; // Space between form elements
 }

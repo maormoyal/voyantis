@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react/prop-types */
+import { useState, useEffect, useCallback } from 'react';
 import AddMessage from './AddMessage';
 import axios from 'axios';
 import styles from './QueueDetails.module.scss';
 
-const QueueDetails = ({ queueName }) => {
+const QueueDetails = ({ queueName, onBack }) => {
   const [messages, setMessages] = useState([]);
   const [feedback, setFeedback] = useState('');
 
   // Function to fetch messages
-  const fetchMessages = () => {
+  const fetchMessages = useCallback(() => {
     axios
       .get(`http://localhost:5000/api/${queueName}?timeout=10000`)
       .then((response) => {
@@ -22,12 +23,11 @@ const QueueDetails = ({ queueName }) => {
         console.error('Error fetching messages', error);
         setFeedback('Failed to fetch messages.');
       });
-  };
+  }, [queueName]);
 
-  // useEffect to automatically fetch messages when the component mounts or when queueName changes
   useEffect(() => {
     fetchMessages();
-  }, [queueName]);
+  }, [fetchMessages, queueName]);
 
   const handleMessageAdded = () => {
     // Optional: fetch updated queue stats or other actions
@@ -49,6 +49,9 @@ const QueueDetails = ({ queueName }) => {
         </ul>
       )}
       {feedback && <p className={styles.feedback}>{feedback}</p>}
+      <button onClick={onBack} className={styles.backButton}>
+        Go Back
+      </button>
     </div>
   );
 };

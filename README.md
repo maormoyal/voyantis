@@ -27,11 +27,12 @@ queue-management/
     ├── src/
     │   ├── components/
     │   │   ├── AddMessage.jsx
-    │   │   ├── QueueDetails.jsx
-    │   │   └── QueueList.jsx
-    │   │   ├── GlobalStyles.module.scss
     │   │   ├── AddMessage.module.scss
+    │   │   ├── CreateQueue.jsx
+    │   │   ├── CreateQueue.module.scss
+    │   │   ├── QueueDetails.jsx
     │   │   ├── QueueDetails.module.scss
+    │   │   └── QueueList.jsx
     │   │   └── QueueList.module.scss
     │   ├── App.jsx
     │   └── main.jsx

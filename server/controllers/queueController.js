@@ -1,5 +1,10 @@
-// controllers/queueController.js
 const queueService = require('../services/queueService');
+
+async function createQueue(req, res) {
+  const { queue_name } = req.body;
+  queueService.createQueue(queue_name);
+  res.status(200).send({ message: `Queue '${queue_name}' created.` });
+}
 
 async function postMessage(req, res) {
   const { queue_name } = req.params;
@@ -26,6 +31,7 @@ function getQueueStats(req, res) {
 }
 
 module.exports = {
+  createQueue,
   postMessage,
   getMessage,
   getQueueStats,

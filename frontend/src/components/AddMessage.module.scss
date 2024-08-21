@@ -1,6 +1,8 @@
 // src/components/AddMessage.module.scss
 .addMessageContainer {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
 
   h2 {
     margin-bottom: 10px;
@@ -21,6 +23,7 @@
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    margin: 10px 0;
 
     &:hover {
       background-color: #0056b3;

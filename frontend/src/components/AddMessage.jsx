@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-// src/components/AddMessage.jsx
 import { useState } from 'react';
 import axios from 'axios';
 import styles from './AddMessage.module.scss';
@@ -18,7 +17,7 @@ const AddMessage = ({ queueName, onMessageAdded }) => {
       .post(`http://localhost:5000/api/${queueName}`, { content: message })
       .then(() => {
         setFeedback('Message added successfully.');
-        setMessage(''); // Clear the input field
+        setMessage('');
         onMessageAdded(); // Callback to refresh the queue list or take other actions
       })
       .catch((error) => {

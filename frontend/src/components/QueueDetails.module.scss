@@ -1,6 +1,10 @@
 // src/components/QueueDetails.module.scss
 .queueDetails {
   margin-top: 20px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 
   .fetchButton {
     padding: 10px 20px;
@@ -9,6 +13,8 @@
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    display: block;
+    margin-bottom: 10px;
 
     &:hover {
       background-color: #218838;
